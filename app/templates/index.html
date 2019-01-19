@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>
+    {% if current_user.is_authenticated %}
+        Authenticated
+    {% else %}
+        NOT Authenticated
+    {% endif %}
+    </p>
+
+    <p>link1</p>
+    <p>link2</p>
+    <p>link3</p>
+    <p>link4</p>
+
+{% endblock %}
