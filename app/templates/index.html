@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>
-    {% if current_user.is_authenticated %}
-        Authenticated
-    {% else %}
-        NOT Authenticated
-    {% endif %}
-    </p>
+    <!--<p>-->
+    <!--{% if current_user.is_authenticated %}-->
+        <!--Authenticated-->
+    <!--{% else %}-->
+        <!--NOT Authenticated-->
+    <!--{% endif %}-->
+    <!--</p>-->
 
-    <p>link1</p>
-    <p>link2</p>
-    <p>link3</p>
-    <p>link4</p>
-
+    <br>
+    <br>
+    <a href="http://www.linkedin.com/in/ronjohn" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn" height="24"></a><br>
+    <a href="https://github.com/ronjohn4" target="_blank"><img src="{{ url_for('static', filename='github.png') }}" alt="GitHub" height="24"></a><br>
+    <a href="https://twitter.com/RonJohn4" target="_blank"><img src="{{ url_for('static', filename='twitter.png') }}" alt="Twitter" height="24"></a><br>
+    <a href="mailto:contract@ronjohnsonconsulting.com">email</a>
 {% endblock %}
