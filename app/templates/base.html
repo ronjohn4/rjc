@@ -12,13 +12,13 @@
         <div style="text-align:left;">
             <a href="{{ url_for('index') }}"
                style="text-decoration: none; font-size:32px;">rjc</a>
-            {% if current_user.is_anonymous %}
-                <span style="float:right;"><a href="{{ url_for('login') }}"
-                                              style="text-align:right;">Login</a></span>
-            {% else %}
+            {% if current_user.is_authenticated %}
                 <a href="{{ url_for('explore') }}">Explore</a>
                 <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-                <span style="float:right;"><a href="{{ url_for('login') }}"
+                <span style="float:right;"><a href="{{ url_for('logout') }}"
+                                              style="text-align:right;">Logout</a></span>
+            {% else %}
+                            <span style="float:right;"><a href="{{ url_for('login') }}"
                                               style="text-align:right;">Login</a></span>
             {% endif %}
         </div>

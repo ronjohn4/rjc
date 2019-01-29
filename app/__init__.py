@@ -9,6 +9,7 @@ import os
 
 from config import Config
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
@@ -20,6 +21,7 @@ login.login_view = 'login'
 
 from app import routes, models, errors
 
+print('app.debug=', app.debug)
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
