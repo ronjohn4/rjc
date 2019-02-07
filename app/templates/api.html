@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr>
+<table>
+    <tr>
+        <th></th>
+        <th>id</th>
+        <th>Date/Time</th>
+        <th>Status</th>
+    </tr>
+    {% for s in stores %}
+        <tr>
+            <td><a href="{{ url_for('api_flip', id=s.id) }}">flip </a></td>
+            <td>{{s.id}}</td>
+            <td>{{s.audit}}</td>
+            <td>{{s.open}}</td>
+        </tr>
+    {% endfor %}
+</table>
+<hr>
+<a href="{{ url_for('api_add') }}">add</a>
+<hr>
+
+{% endblock %}
