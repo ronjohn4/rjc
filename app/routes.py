@@ -61,15 +61,7 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    page = request.args.get('page', 1, type=int)
-    history = user.history.order_by(History.timestamp.desc()).paginate(
-        page, app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('user', username=user.username, page=history.next_num) \
-        if history.has_next else None
-    prev_url = url_for('user', username=user.username, page=history.prev_num) \
-        if history.has_prev else None
-    return render_template('user.html', user=user, history=history.items,
-                           next_url=next_url, prev_url=prev_url)
+    return render_template('user.html', user=user)
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
