@@ -19,6 +19,7 @@ mail = Mail(app)
 
 login.login_view = 'login'
 
+print('from app import')
 from app import routes, models, errors
 
 
