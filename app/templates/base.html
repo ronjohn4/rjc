@@ -2,25 +2,11 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <html>
     <head>
-        {% if title %}
-        <title>{{ title }} - rjc</title>
-        {% else %}
-        <title>rjc</title>
-        {% endif %}
+        <title>Env Vars</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        <div style="text-align:left;">
-            <a href="{{ url_for('index') }}"
-               style="text-decoration: none; font-size:32px;">rjc</a>
-            {% if current_user.is_authenticated %}
-                <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-                <span style="float:right;"><a href="{{ url_for('logout') }}"
-                                              style="text-align:right;">Logout</a></span>
-            {% else %}
-                            <span style="float:right;"><a href="{{ url_for('login') }}"
-                                              style="text-align:right;">Login</a></span>
-            {% endif %}
-        </div>
+    <h1>Environment Variables</h1>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul>
