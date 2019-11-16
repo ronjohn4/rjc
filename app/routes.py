@@ -34,8 +34,8 @@ def add():
         var = Var(name=request.form['name'], val=request.form['val'])
         db.session.add(var)
         db.session.commit()
-        flash('Added')
-        app.logger.info('Added')
+        flash(f'Added:{var}')
+        app.logger.info(f'Added:{var}')
         return redirect(url_for('index'))
 
     return render_template('add.html', form=form)
@@ -51,8 +51,8 @@ def save():
         var.val = request.form['val']
         db.session.commit()
 
-        flash('Saved')
-        app.logger.info('Saved')
+        flash(f'Saved:{var}')
+        app.logger.info(f'Saved:{var}')
     return redirect(url_for('index'))
 
 
