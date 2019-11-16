@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <script type="text/javascript">
-    function submitform()
-    {
-        document.detailform.submit();
-        return false;
-    }
-    </script>
-
     <h2>Add</h2>
     <form action="{{ url_for('add') }}" method="post" name="detailform">
     {{ form.hidden_tag() }}
@@ -16,15 +8,15 @@
         <tr>
             <td align="right">{{form.id.label}}:</td>
             <td>new</td>
-        </tr>>
+        </tr>
         <tr>
             <td align="right">{{form.name.label}}:</td>
             <td>{{form.name}}</td>
-        </tr>>
+        </tr>
         <tr>
             <td align="right">{{form.val.label}}:</td>
             <td>{{form.val}}</td>
-        </tr>>
+        </tr>
     </table>
     {{ form.csrf_token }}
     </form>
