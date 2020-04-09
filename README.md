@@ -1,3 +1,3 @@
-# RJC - Ron Johnson Consulting
+# Environment Variables
 
-website project, sandbox and general playground
+Basic maintenance for environment variables in key/value pairs.
