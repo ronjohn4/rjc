@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import unittest
 from app import app, db
-from app.models import User, History
+from app.models import User
 
 
 class UserModelCase(unittest.TestCase):
